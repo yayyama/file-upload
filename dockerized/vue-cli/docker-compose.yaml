@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  sh:
+    image: yayyama/vue-cli
+    build: .
+    stdin_open: true
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: ../../services/
+        target: /app
